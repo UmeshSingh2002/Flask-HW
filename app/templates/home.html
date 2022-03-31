@@ -1,0 +1,29 @@
+<html>
+<body>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+<li>{{ messages[0] }}</li>
+</ul>
+{% endif %}
+{% endwith %}
+
+<h1>Welcome {{name}}!</h1>
+<a href="www.google.com">not google</a>
+<ul>
+{% for i in city_names %}
+<li>{{i}}</li>
+{% endfor %}
+</ul>
+
+<form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>
